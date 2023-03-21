@@ -115,6 +115,13 @@ class ArtistsRepository
 
     #returns an array of Artists objects.
     end
+    # selects a single record
+    # given the id as an arg
+    def find(id)
+    # select id, name, genre from artists where id = $1;
+
+    #returns one artist.
+    end
 end
 ```
 6. Write Test Examples

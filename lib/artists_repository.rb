@@ -22,4 +22,16 @@ class ArtistsRepository
         return artists
     #returns an array of Artists objects.
     end
+    def find(id)
+        sql = 'SELECT id, name, genre FROM artists WHERE id = $1;'
+        param = [id]
+        result_set = DatabaseConnection.exec_params(sql, param)
+
+        record = result_set[0]
+        artist = Artists.new
+        artist.id = record['id']
+        artist.name = record['name']
+        artist.genre = record['genre']
+        return artist
+    end
 end

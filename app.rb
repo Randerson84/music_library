@@ -9,6 +9,8 @@ DatabaseConnection.connect('music_library_test')
 # Perform a SQL query on the database and get the result set.
 artists_repository = ArtistsRepository.new
 
+artists_repository.find(1)
+
 artists_repository.all.each do |artist|
   p artist
 end
